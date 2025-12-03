@@ -1,82 +1,71 @@
-# Lightweight React Template for KAVIA
+# Simple Todo App (Ocean Professional Theme)
 
-This project provides a minimal React template with a clean, modern UI and minimal dependencies.
+A modern, accessible, single-page todo application built with React and styled with the Ocean Professional palette.
 
 ## Features
 
-- **Lightweight**: No heavy UI frameworks - uses only vanilla CSS and React
-- **Modern UI**: Clean, responsive design with KAVIA brand styling
-- **Fast**: Minimal dependencies for quick loading times
-- **Simple**: Easy to understand and modify
+- Add, edit (inline), and delete todo items
+- Mark todos as complete/incomplete with a checkbox
+- Filter by All, Active, Completed
+- Clear all completed todos
+- Local persistence (uses browser localStorage, no backend needed)
+- Clean, responsive design, mobile friendly
+- Accessibility: semantic elements, proper labels, keyboard and screen-reader friendly
+- Ocean Professional styling: blue/amber accents, subtle gradients, light/dark mode toggle
 
-## Getting Started
+## Usage
 
-In the project directory, you can run:
+1. Install dependencies:
+   ```
+   npm install
+   ```
 
-### `npm start`
+2. Start the app locally:
+   ```
+   npm start
+   ```
+   Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-Runs the app in development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+3. (Optional) Run tests:
+   ```
+   npm test
+   ```
 
-### `npm test`
+4. Build for production:
+   ```
+   npm run build
+   ```
 
-Launches the test runner in interactive watch mode.
+## App Structure
 
-### `npm run build`
+- `src/components/`
+  - `Header.jsx`: App title, theme toggle
+  - `TodoInput.jsx`: Add new todo
+  - `TodoList.jsx`: Renders todos (uses `TodoItem`)
+  - `TodoItem.jsx`: Inline edit/toggle/delete single todo
+  - `Footer.jsx`: Filter tabs, stats, clear completed
+- `src/utils.js`: Pure functions for loading/saving todos (for testing)
+- `src/App.css`: Styles using Ocean Professional palette (`#2563EB`, `#F59E0B`, `#EF4444`, etc)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Environment Variables
 
-## Customization
+The app works out of the box using browser localStorage.
+Optionally, you may set the following environment variables (see `.env.example`):
 
-### Colors
+- `REACT_APP_API_BASE`, `REACT_APP_BACKEND_URL`, ...
+- `REACT_APP_NODE_ENV`, `REACT_APP_PORT`, etc
 
-The main brand colors are defined as CSS variables in `src/App.css`:
+If no backend URL is detected, all data is saved in localStorage.
 
-```css
-:root {
-  --kavia-orange: #E87A41;
-  --kavia-dark: #1A1A1A;
-  --text-color: #ffffff;
-  --text-secondary: rgba(255, 255, 255, 0.7);
-  --border-color: rgba(255, 255, 255, 0.1);
-}
-```
+## Accessibility
 
-### Components
+- All controls are keyboard accessible.
+- Proper tab order and ARIA attributes where needed.
 
-This template uses pure HTML/CSS components instead of a UI framework. You can find component styles in `src/App.css`. 
+## License
 
-Common components include:
-- Buttons (`.btn`, `.btn-large`)
-- Container (`.container`)
-- Navigation (`.navbar`)
-- Typography (`.title`, `.subtitle`, `.description`)
+MIT
 
-## Learn More
+## Credits
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Styled per Ocean Professional theme.
